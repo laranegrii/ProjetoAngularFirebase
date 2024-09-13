@@ -1,0 +1,21 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>cadastrar-produto</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  {{ this.produto.nome }}
+
+  <ion-item>
+    <ion-input label="Nome" [(ngModel)]="this.produto.nome"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-input label="Preço" [(ngModel)]="this.produto.preco"></ion-input>
+  </ion-item>
+
+  <ion-button (click)="salvar()">Cadastrar</ion-button>
+
+</ion-content>

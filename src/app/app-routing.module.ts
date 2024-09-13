@@ -10,6 +10,10 @@ const routes: Routes = [
     path: '',
     redirectTo: 'home',
     pathMatch: 'full'
+  },
+  {
+    path: 'cadastrar-produto',
+    loadChildren: () => import('./cadastrar-produto/cadastrar-produto.module').then( m => m.CadastrarProdutoPageModule)
   }
 ];
 

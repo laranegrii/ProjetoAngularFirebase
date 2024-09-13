@@ -1,0 +1,54 @@
+ion-header{
+   & ion-title{
+        font-size: 1.7rem;
+        color: white;
+    }    
+}
+
+ion-toolbar {
+    --background: rgb(158, 47, 47);
+}
+
+ion-item {
+    --background: none;
+
+    & ion-icon {
+        color: white;
+    }
+}
+
+.amarelo {
+    background: rgb(206, 206, 206);
+    color: rgb(158, 47, 47);
+    font-weight: bold;
+    letter-spacing: 0.15rem;
+
+    & ion-label {
+        --font-size: 1rem;
+    }
+}
+
+html {
+    --ion-dynamic-font: var(--ion-default-dynamic-font);
+    --ion-font-family: 'Comic Sans MS';
+  }
+
+ion-card {
+    min-height: 250px;
+}
+
+ion-icon {
+    --background: none;
+    --color: white;
+}
+
+ion-modal {
+    --width: 65%;
+}
+
+ion-footer{
+    & ion-title{
+         font-size: 1.2rem;
+         color: white;
+     }    
+ }

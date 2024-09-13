@@ -1,25 +1,82 @@
-<ion-header [translucent]="true">
+<ion-header>
+  <ion-toolbar>
+    <ion-item lines="none" slot="start">
+      <ion-title>Tamy Lanches</ion-title>
+    </ion-item>
+    <ion-item lines="none" slot="end">
+      <ion-icon name="cart-outline"></ion-icon>
+      <!-- <ion-icon name="cart-outline" size="large" color="white"></ion-icon> -->
+    </ion-item>
+  </ion-toolbar>
+</ion-header>
 
-  <ion-row class="ion-justify-content-center">
-    <ion-col size="10">
-
-      <ng-container *ngFor="let funcionario of this.funcionarios">
-        <ion-item>
-          <ion-label>{{funcionario.Nome}}</ion-label>
-        </ion-item>
-        <ion-item>
-          <ion-label>{{funcionario.Sobrenome}}</ion-label>
-        </ion-item>
-        <ion-item>
-          <ion-label>{{funcionario.Cargo}}</ion-label>
-        </ion-item>
-        <ion-item>
-          <ion-label>{{funcionario.Fone}}</ion-label>
-        </ion-item>
-      </ng-container>
-
-    </ion-col>
-  </ion-row>
+<ion-content class="ion-no-padding">
   
 
+  <ion-row class="amarelo">
+    <ion-col size="3" class="ion-text-center">
+      <ion-label>Cardápio</ion-label>
+    </ion-col>
+    <ion-col size="3" class="ion-text-center">
+      <ion-label>Especiais</ion-label>
+    </ion-col>
+    <ion-col size="3" class="ion-text-center">
+      <ion-label>Simples</ion-label>
+    </ion-col>
+    <ion-col size="3" class="ion-text-center">
+      <ion-label>Bebidas</ion-label>
+    </ion-col>
+  </ion-row>
+
+  <ion-row>
+
+    
+    <ng-container *ngFor="let prod of this.produtos">
+      <!-- <ng-contain *ngIf="prod.nome == 'x-bacon">
+  
+      </ng-contain> -->
+        <ion-col size="12" sizeLg="2">
+        <ion-card id="open-modal-{{prod.id}}">
+          <!-- <img alt="Silhouette of mountains" src="{{ prod.foto }}" /> -->
+          <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/card-media.png" />
+          <ion-card-content> 
+            <ion-card-title>{{ prod.nome }}</ion-card-title>
+            <ion-card-subtitle>R$ {{ prod.preco }}</ion-card-subtitle>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+
+
+          <ion-modal trigger="open-modal-{{prod.id}}" class=".modalCardapio">
+            <ng-template>
+              <ion-header>
+                <ion-toolbar >
+                  <ion-title class="color-white">{{ prod.nome }}</ion-title>    
+                </ion-toolbar>
+              </ion-header>
+              <ion-content class="ion-padding">
+        
+              </ion-content>
+            </ng-template>
+          </ion-modal>
+
+      </ng-container>     
+    </ion-row>
 </ion-content>
+
+<ion-footer class="ion-no-border">
+  <ion-toolbar>
+    <ion-title slot="start">CONTATO</ion-title>
+
+      <!-- <ion-item size="2" slot="end">
+        <ion-icon name="logo-instagram"></ion-icon>
+      </ion-item>       -->
+      <ion-item size="2" slot="end">
+        <ion-icon name="logo-whatsapp"></ion-icon>
+      </ion-item>      
+      <ion-item size="2" slot="end">
+        <ion-icon name="arrow-up-outline"></ion-icon>
+      </ion-item>      
+
+  </ion-toolbar>
+</ion-footer>
